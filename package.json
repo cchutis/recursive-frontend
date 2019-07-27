@@ -5,6 +5,7 @@
   "dependencies": {
     "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-activestorage-provider": "^0.8.0",
     "react-dom": "^16.8.6",
     "react-draggable-list": "^4.0.3",
     "react-glitch-effect": "^1.0.4",
