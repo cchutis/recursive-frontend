@@ -1,33 +1,196 @@
-.App {
+/* Google Font - Gruppo */
+@import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
+
+/* Global Styles */
+* {
+  font-family: 'Gruppo', cursive;
+  margin: 0;
+  padding:0;
+}
+
+body {
+  background-color: #2e2e2e;
+  background-image: radial-gradient(circle farthest-corner at 7.5% 54.1%, rgba(0, 0, 0, 1) 0%, rgba(39, 0, 89, 1) 74.9%);
+  /* animation: blur-n-hue 10s infinite ease-in-out; */
+}
+
+/* Main App Frame */
+.main {
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-repeating-linear-gradient(top, transparent 0px, transparent 2px, rgba(30, 30, 30, 0.15) 2px, rgba(30, 30, 30, 0.15) 4px);
+  -webkit-background-size: 100% 4px;
+}
+
+/* Login Page Reveal */
+.logo-container-closed {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: bg 10s infinite ease-out;
+  
+}
+.logo-container-open {
+  height: 98%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  animation: bg 10s infinite ease-out;
+}
+
+.logo {
+  font-size: 20vw;
+}
+.logo-destruct {
+  font-size: 16vw;
+}
+
+.definition-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pronounce {
+  font-size: 5vw;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.define {
+  padding: 0 20%;
+  font-size: 2vw;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sign-in-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.sign-in-form > input {
+  width: 300px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 2vw;
+  text-align: center;
+  border: 0;
+}
+
+.sign-in-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 1.5vw;
+  border: 0;
   color: white;
+  background-color: darkcyan;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.sign-in-button:hover {
+  background-color: darkmagenta;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.project-body {
+  width: 100%;
+  height: 100%;
+  margin: 5%;
+}
+/* Project Cards */
+.project-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 5%;
+}
+
+.project-card {
+  background-color: lightgrey;
+  flex: 0 1 325px;
+  box-sizing: border-box;
+  margin: 1rem 1em;
+  padding: 100px 20px 20px 20px;
+  border-radius: 20px;
+}
+
+/* Main Container */
+.main-container {
+  margin-left: 20%;
+}
+
+/* Navbar */
+.navbar-container {
+  height: 100%;
+  width: 20%;
+  background-color: #5c5c5c;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Tasks Container */
+.task-container {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* Task Cards */
+.task-card {
+  background-color: #5c5c5c;
+  margin: 20px;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  flex: 50px;
+  box-sizing: border-box;
+}
+
+
+
+
+/* Global Animation Keyframs */
+@keyframes bg {
+  0% {
+    background-color: rgba(46, 46, 46, 0);
   }
-  to {
-    transform: rotate(360deg);
+  49% {
+    background-color: rgba(46, 46, 46, 0);
+  }
+  50.5% {
+    background-color: rgba(155, 155, 206, 0.4);
+  }
+  51% {
+    background-color: rgba(46, 46, 46, 0);
+  }
+  51.5% {
+    background-color: rgba(155, 155, 206, 0.3);
+  }
+  57% {
+    background-color: rgba(46, 46, 46, 0);
+  }
+  100% {
+    background-color: rgba(46, 46, 46, 0);
+  }
+}
+
+@keyframes blur-n-hue {
+  0% {
+    filter: blur(10px) hue-rotate(-15deg);
+  }
+  50% {
+    filter: blur(20px) hue-rotate(0deg);
+  }
+  100% {
+    filter: blur(10px) hue-rotate(-15deg);
   }
 }
