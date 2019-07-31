@@ -5,14 +5,16 @@ export default class ProjectContainer extends Component {
     
     displayProjects = () => {
         return this.props.projectList.map(project => {
-            return <ProjectCard key={project.id} project={project} viewProject={this.props.viewProject}/>
+            return <ProjectCard key={project.id} project={project} viewProject={this.props.viewProject} deleteProject={this.props.deleteProject}/>
         })
     }
+
+    
 
     render() {
         return (
             <div className="project-container">
-                {this.displayProjects()}
+                    {this.displayProjects()}   
             </div>
         )
     }

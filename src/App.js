@@ -33,11 +33,17 @@ export default class App extends Component {
     })
   }
 
+  logout = () => {
+    this.setState({
+      signedIn: false
+    })
+  }
+
   render() {
     return (
       <div className="main">
         {this.state.signedIn ?
-        <MainContainer />
+        <MainContainer logout={this.logout}/>
         :
         <Login userInfo={this.state.user} signedIn={this.signedIn}/>
         }

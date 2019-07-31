@@ -1,17 +1,41 @@
 import React from 'react'
 // import Moment from 'moment'
 
-export default function ProjectCard (props) {
 
-    const {name, card_photo, language, due_date, id} = props.project
+export default class ProjectCard extends React.Component {
+    
+    constructor(props) {
+        super()
+        this.close = React.createRef()
+    }
+    
+    handleClick = (e, id) => {
+        e.stopPropagation()
+        this.props.deleteProject(id)
+    }
+    
+    showX = () => {
+        this.close.current.style.display = "block"    
+    }
 
-    return (
-        <div className="project-card">
-            <img src={`http://localhost:4000/${card_photo}`} alt=""/>
-            <h2>{name}</h2>
-            <h3>{language}</h3>
-            <p>Deadline: {due_date}</p>
-            <button onClick={() => props.viewProject(id)}>View Project</button>
-        </div>
-    )
+    hideX = () => {
+        this.close.current.style.display = "none" 
+    }
+    
+    render () {
+        const {name, photo, language, due_date, id} = this.props.project
+        return (
+            <div className="project-card" onClick={() => this.props.viewProject(name, due_date)} onMouseEnter={this.showX} onMouseLeave={this.hideX}>
+                <div ref={this.close} className="close-btn" onClick={(e) => this.handleClick(e, id)}>X</div>
+                <div className="project-image-container">
+                    <img src={photo} alt={name} className="project-card-img"/>
+                </div>
+                <div className="project-card-details">
+                    <h2 className="project-title">{name}</h2>
+                    <h3 className="project-language">{language}</h3>
+                    <p className="project-due-date">Deadline: {due_date}</p>
+                </div>
+            </div>
+        )
+    }
 }
