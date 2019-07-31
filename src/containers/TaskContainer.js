@@ -31,7 +31,7 @@ export default class TaskContainer extends Component {
     }
 
     render() {
-        
+
         const {name, language, due_date} = this.props.selectedProject
 
         return (
