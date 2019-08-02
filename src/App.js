@@ -10,7 +10,7 @@ export default class App extends Component {
 
   state = {
     user: {},
-    signedIn: true
+    signedIn: false
   }
 
   componentDidMount() {

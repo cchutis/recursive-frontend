@@ -19,7 +19,7 @@ export default class AddProjectForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.createNewProject(this.state)
+        // this.props.createNewProject(this.state)
         this.postNewProject()
     }
 
@@ -40,7 +40,7 @@ export default class AddProjectForm extends Component {
         })
             .then(r => r.json())
             .then(newProject => {
-                console.log(newProject)
+                this.props.createNewProject(newProject)
             })
         this.setState({
             name: "",

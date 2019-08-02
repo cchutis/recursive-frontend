@@ -18,7 +18,7 @@ export default class EditProjectForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         //passthis up
-        this.props.renderEdits(this.state)
+        // this.props.renderEdits(this.state)
         this.postEditedInfo()
     }
 
@@ -39,7 +39,7 @@ export default class EditProjectForm extends Component {
         })
             .then(r => r.json())
             .then(edited => {
-                console.log(edited)
+                this.props.renderEdits(edited)
             })
         // this.setState({
         //     name: "",

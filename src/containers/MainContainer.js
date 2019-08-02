@@ -39,13 +39,11 @@ export default class MainContainer extends Component {
                 projects: this.state.filteredProjects
             })
         } else {
-            const filterProjects = this.state.projects.filter(project => {
+            this.setState({
+                projects: this.state.filteredProjects.filter(project => {
                 return project.language.toLowerCase() === type
             })
-            this.setState({
-                projects: filterProjects
-            },
-            () => this.state.projects = this.state.filteredProjects)
+            })
         }
     }
 
@@ -62,16 +60,30 @@ export default class MainContainer extends Component {
 
     renderEdits = (edited) => {
         this.setState({
-            projectSelected: edited,
-            editProject: null
-        })
+          projects: this.state.projects.map(project => {
+            if (project.id === edited.id) {
+              return edited;
+            } else {
+              return project;
+            }
+          }),
+          filteredProjects: this.state.filteredProjects.map(project => {
+            if (project.id === edited.id) {
+              return edited;
+            } else {
+              return project;
+            }
+          }),
+          projectSelected: edited
+        });
     }
 
 
 
     createNewProject = (newProject) => {
         this.setState({
-            newProject: newProject
+            projects: [...this.state.projects, newProject],
+            filteredProjects: [...this.state.filteredProjects, newProject]
         })
     }
 
