@@ -17,6 +17,8 @@ export default class App extends Component {
     this.fetchUser()
   }
 
+  //catching
+  //TDD - find use cases/tests
   fetchUser = () => {
     fetch(USER_API)
     .then(r => r.json())
