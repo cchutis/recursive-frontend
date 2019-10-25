@@ -4,7 +4,7 @@ import ProjectContainer from './ProjectContainer'
 import TaskContainer from './TaskContainer'
 import { CSSTransition } from 'react-transition-group'
 
-const API = 'http://localhost:4000/projects'
+const API = 'https://recursive-app-api.herokuapp.com/projects'
 
 export default class MainContainer extends Component {
 

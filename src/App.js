@@ -3,7 +3,7 @@ import './App.css'
 import Login from './containers/Login'
 import MainContainer from './containers/MainContainer';
 
-const USER_API = 'http://localhost:4000/users/1'
+const USER_API = 'https://recursive-app-api.herokuapp.com/users/1'
 
 
 export default class App extends Component {
