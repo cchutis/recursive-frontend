@@ -19,7 +19,7 @@ export default class Login extends Component {
         return (
             <div className={toggle}>
                 <video autoPlay muted loop id="bkg-video">
-                    <source type="video/mp4" src="/video/synthwave.mp4" />
+                    <source type="video/mp4" src="https://www.constantinechutis.com/wp-content/uploads/2019/10/synthwave.mp4" />
                 </video>
                 <GlitchEffect>
                     {this.state.menuToggle ? 
